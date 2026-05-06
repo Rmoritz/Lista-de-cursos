@@ -38,8 +38,7 @@
                 <ul style="list-style:none; display:flex; flex-direction:column; gap:.45rem;">
                     <li style="font-size:.82rem; color:var(--cinza);">Mini Projeto A2</li>
                     <li style="font-size:.82rem; color:var(--cinza);">Desenvolvimento de Sistemas</li>
-                    <li style="font-size:.82rem; color:var(--cinza);">PHP · Bootstrap · Sessões</li>
-                    <li style="font-size:.82rem; color:var(--cinza);">2026/1</li>
+                    
                 </ul>
             </div>
         </div>
@@ -54,12 +53,7 @@
             flex-wrap: wrap;
             gap: .75rem;
         ">
-            <p style="font-family:var(--fonte-mono); font-size:.7rem; color:var(--cinza);">
-                &copy; <?= date('Y') ?> CodePath — Projeto Acadêmico
-            </p>
-            <p style="font-family:var(--fonte-mono); font-size:.7rem; color:var(--borda);">
-                PHP <?= PHP_MAJOR_VERSION ?>.<?= PHP_MINOR_VERSION ?> &nbsp;/&nbsp; sem banco de dados
-            </p>
+            
         </div>
 
     </div>
