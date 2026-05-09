@@ -6,7 +6,7 @@ if (isset($_SESSION['logado']) && $_SESSION['logado'] === true) {
 }
 
 $erro = '';
-$hash_salvo = password_hash('1222', PASSWORD_DEFAULT);
+$hash_salvo = password_hash('1234', PASSWORD_DEFAULT);
 $user_salvo = '1234';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
