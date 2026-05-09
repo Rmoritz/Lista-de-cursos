@@ -11,7 +11,7 @@
 
         <div style="display:grid; grid-template-columns: 1.5fr 1fr 1fr; gap:2.5rem; margin-bottom:2.5rem;">
 
-            <!-- Col 1 – Brand -->
+        
             <div>
                 <p style="font-family:var(--fonte-mono); font-size:1rem; font-weight:700; color:var(--lima); margin-bottom:.6rem;">
                     <span style="display:inline-block; width:8px; height:8px; background:var(--lima); border-radius:50%; margin-right:6px;"></span>CodePath
@@ -21,7 +21,7 @@
                 </p>
             </div>
 
-            <!-- Col 2 – Navegação -->
+         >
             <div>
                 <p style="font-family:var(--fonte-mono); font-size:.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--cinza); margin-bottom:.85rem;">Navegação</p>
                 <ul style="list-style:none; display:flex; flex-direction:column; gap:.45rem;">
@@ -32,7 +32,7 @@
                 </ul>
             </div>
 
-            <!-- Col 3 – Projeto -->
+            
             <div>
                 <p style="font-family:var(--fonte-mono); font-size:.7rem; letter-spacing:2px; text-transform:uppercase; color:var(--cinza); margin-bottom:.85rem;">Projeto</p>
                 <ul style="list-style:none; display:flex; flex-direction:column; gap:.45rem;">
@@ -43,7 +43,7 @@
             </div>
         </div>
 
-        <!-- Bottom bar -->
+    
         <div style="
             border-top: 1px solid var(--borda);
             padding-top: 1.25rem;
@@ -59,7 +59,6 @@
     </div>
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

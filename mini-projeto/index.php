@@ -3,13 +3,13 @@ session_start();
 require_once 'dados.php';
 require_once 'funcoes.php';
 
-// ── Filtro via GET (barra de busca do header) ──
+
 $busca = '';
 if (isset($_GET['busca']) && !empty(trim($_GET['busca']))) {
     $busca = trim(htmlspecialchars($_GET['busca']));
 }
 
-// ── Filtra cursos pelo termo de busca (nome ou categoria) ──
+
 function filtrarCursos(array $cursos, string $termo): array {
     if ($termo === '') return $cursos;
     $t = mb_strtolower($termo);
@@ -21,7 +21,7 @@ function filtrarCursos(array $cursos, string $termo): array {
 
 $cursosFiltrados = filtrarCursos($cursos, $busca);
 
-// ── Agrupa por categoria (mantém ordem das trilhas) ──
+
 $trilhas = [
     'Programação'    => ['label' => 'Cursos de Programação',      'num' => '01'],
     'Infraestrutura' => ['label' => 'Aprendendo Infraestrutura',  'num' => '02'],
@@ -58,7 +58,7 @@ require 'cabecalho.php';
 <main class="page-main">
 
     <?php if ($busca !== ''): ?>
-    <!-- Resultado de busca -->
+    
     <div style="margin-bottom:2rem; display:flex; align-items:center; gap:.75rem; flex-wrap:wrap;">
         <span class="filter-active-badge">
             <i class="bi bi-search"></i> "<?= $busca ?>"
@@ -79,7 +79,7 @@ require 'cabecalho.php';
         </div>
 
     <?php elseif ($busca !== ''): ?>
-        <!-- Resultado flat (sem trilhas) -->
+        
         <div class="row g-4">
             <?php foreach ($cursosFiltrados as $curso): ?>
             <div class="col-12 col-sm-6 col-lg-4">
@@ -89,13 +89,13 @@ require 'cabecalho.php';
         </div>
 
     <?php else: ?>
-        <!-- ── Trilhas em ordem ── -->
+        
         <?php foreach ($trilhas as $cat => $info): ?>
             <?php if (empty($porCategoria[$cat])) continue; ?>
 
             <section style="margin-bottom: 4rem;">
 
-                <!-- Cabeçalho da trilha -->
+                
                 <div style="display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:.75rem; margin-bottom:1.5rem;">
                     <div>
                         <p class="section-label">trilha <?= htmlspecialchars($info['num']) ?></p>
@@ -122,7 +122,7 @@ require 'cabecalho.php';
             </section>
         <?php endforeach; ?>
 
-        <!-- Cursos extras adicionados pelo admin (categorias não mapeadas) -->
+        
         <?php
         $extras = array_filter($cursosFiltrados, fn($c) => !array_key_exists($c['categoria'], $trilhas));
         if (!empty($extras)):

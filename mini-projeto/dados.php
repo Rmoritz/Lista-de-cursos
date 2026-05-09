@@ -1,11 +1,8 @@
 <?php
-// ═══════════════════════════════════════════════════
-//  dados.php — Array central de cursos do CodePath
-// ═══════════════════════════════════════════════════
+
 
 $cursos = [
 
-    // ─── TRILHA 1: Cursos de Programação ─────────────────────────────────
     [
         'id'        => 1,
         'titulo'    => 'Lógica de Programação e Algoritmos',
@@ -47,7 +44,6 @@ $cursos = [
         'descricao' => 'Uso de listas e laços de repetição para armazenamento e processamento de informações. Entenda como organizar dados de forma eficiente na memória.',
     ],
 
-    // ─── TRILHA 2: Aprendendo Infraestrutura ─────────────────────────────
     [
         'id'        => 5,
         'titulo'    => 'Fundamentos de Redes e Protocolos',
@@ -89,7 +85,7 @@ $cursos = [
         'descricao' => 'Práticas para proteger dados e configurar firewalls. Aprenda sobre criptografia, autenticação, gestão de acessos e conformidade com normas de segurança.',
     ],
 
-    // ─── TRILHA 3: Seja um Profissional Web ──────────────────────────────
+    
     [
         'id'        => 9,
         'titulo'    => 'Desenvolvimento Front-end com Bootstrap',
@@ -132,7 +128,6 @@ $cursos = [
     ],
 ];
 
-// Mescla cursos da sessão (adicionados pelo admin) se existirem
 if (isset($_SESSION['cursos_extras']) && is_array($_SESSION['cursos_extras'])) {
     $cursos = array_merge($cursos, $_SESSION['cursos_extras']);
 }

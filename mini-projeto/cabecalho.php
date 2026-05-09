@@ -1,5 +1,4 @@
 <?php
-// Inicia sessão se ainda não foi iniciada
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -12,15 +11,15 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodePath — Cursos de Tecnologia</title>
 
-    <!-- Google Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap 5 -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <style>
@@ -47,7 +46,6 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             min-height: 100vh;
         }
 
-        /* ── NAVBAR ── */
         .navbar-codepath {
             background: var(--grafite);
             border-bottom: 1px solid var(--borda);
@@ -111,7 +109,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             color: var(--lima);
         }
 
-        /* busca inline */
+    
         .search-wrap {
             display: flex;
             align-items: center;
@@ -148,7 +146,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
         }
         .search-wrap button:hover { background: var(--lima-dim); }
 
-        /* badge login */
+        
         .btn-login-cp {
             font-family: var(--fonte-mono);
             font-size: .75rem;
@@ -179,7 +177,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
         }
         .btn-sair-cp:hover { border-color: var(--cinza); color: var(--branco); }
 
-        /* ── HERO STRIP (aparece em index.php) ── */
+       
         .hero-strip {
             background: linear-gradient(135deg, #0d1a00 0%, var(--preto) 60%);
             border-bottom: 1px solid var(--borda);
@@ -225,7 +223,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             line-height: 1.6;
         }
 
-        /* ── SHARED CARD STYLE (usado no index) ── */
+       
         .course-card {
             background: var(--painel);
             border: 1px solid var(--borda);
@@ -297,7 +295,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
         }
         .btn-ver-mais:hover { background: var(--lima-dim); color: var(--preto); }
 
-        /* ── SECTION LABEL ── */
+    
         .section-label {
             font-family: var(--fonte-mono);
             font-size: .72rem;
@@ -319,7 +317,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             margin: .75rem 0 2rem;
         }
 
-        /* ── FILTRO ATIVO ── */
+
         .filter-active-badge {
             font-family: var(--fonte-mono);
             font-size: .75rem;
@@ -332,7 +330,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             gap: .4rem;
         }
 
-        /* ── EMPTY STATE ── */
+    
         .empty-state {
             text-align: center;
             padding: 4rem 1rem;
@@ -341,10 +339,10 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
             font-size: .9rem;
         }
 
-        /* ── PÁGINA INTERNA layout ── */
+        
         .page-main { padding: 3rem 2rem; max-width: 1200px; margin: 0 auto; }
 
-        /* ── RESPONSIVO ── */
+
         @media (max-width: 768px) {
             .search-wrap { display: none; }
             .hero-strip { padding: 3rem 1.25rem 2.5rem; }
@@ -354,17 +352,15 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
 </head>
 <body>
 
-<!-- ════════════════════════════════════════════
-     NAVBAR
-════════════════════════════════════════════ -->
+
 <nav class="navbar-codepath">
 
-    <!-- Brand -->
+   
     <a href="index.php" class="navbar-brand-cp">
         <span class="brand-dot"></span>CodePath
     </a>
 
-    <!-- Links -->
+   
     <ul class="nav-links">
         <li><a href="index.php"     class="<?= $pagina_atual === 'index.php'     ? 'active' : '' ?>">Início</a></li>
         <li><a href="filtrar.php"   class="<?= $pagina_atual === 'filtrar.php'   ? 'active' : '' ?>">Cursos</a></li>
@@ -373,7 +369,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
         <?php endif; ?>
     </ul>
 
-    <!-- Busca -->
+    
     <form class="search-wrap" action="index.php" method="GET">
         <input type="text" name="busca"
                placeholder="Buscar por nome ou categoria…"
@@ -381,7 +377,7 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
         <button type="submit"><i class="bi bi-search"></i> Buscar</button>
     </form>
 
-    <!-- Auth -->
+    
     <?php if (isset($_SESSION['logado']) && $_SESSION['logado'] === true): ?>
         <a href="logout.php" class="btn-sair-cp">
             <i class="bi bi-box-arrow-right"></i> Sair
@@ -393,4 +389,4 @@ $pagina_atual = basename($_SERVER['PHP_SELF']);
     <?php endif; ?>
 
 </nav>
-<!-- ════════ FIM NAVBAR ════════ -->
+

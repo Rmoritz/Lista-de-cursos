@@ -1,11 +1,5 @@
 <?php
-// ═══════════════════════════════════════════════════
-//  funcoes.php — Funções auxiliares do CodePath
-// ═══════════════════════════════════════════════════
 
-/**
- * Retorna o HTML de um card de curso.
- */
 function cardCurso(array $curso): string {
     $id       = (int) $curso['id'];
     $titulo   = htmlspecialchars($curso['titulo']);
@@ -16,7 +10,7 @@ function cardCurso(array $curso): string {
     $imagem   = htmlspecialchars($curso['imagem']  ?? '');
     $descricao = htmlspecialchars(mb_substr($curso['descricao'] ?? '', 0, 110)) . '…';
 
-    // Cor do nível
+    
     $corNivel = match($nivel) {
         'Iniciante'    => '#4ade80',
         'Intermediário'=> '#facc15',
@@ -43,9 +37,7 @@ function cardCurso(array $curso): string {
     HTML;
 }
 
-/**
- * Busca um curso pelo ID no array (inclui extras da sessão).
- */
+
 function buscarCursoPorId(array $cursos, int $id): ?array {
     foreach ($cursos as $c) {
         if ((int)$c['id'] === $id) return $c;
@@ -53,18 +45,13 @@ function buscarCursoPorId(array $cursos, int $id): ?array {
     return null;
 }
 
-/**
- * Retorna todas as categorias únicas do catálogo.
- */
 function categorias(array $cursos): array {
     $cats = array_unique(array_column($cursos, 'categoria'));
     sort($cats);
     return $cats;
 }
 
-/**
- * Gera um ID único para novos cursos adicionados via sessão.
- */
+
 function gerarNovoId(array $cursos): int {
     if (empty($cursos)) return 1;
     return max(array_column($cursos, 'id')) + 1;
